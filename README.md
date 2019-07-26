@@ -1,3 +1,5 @@
+**note from zb3**: I do not "maintain" this. This library has many bugs, it's not (yet?) suitable for general use. I have a very specific use case and my patches (if any) only cover that
+
 # gexto
 ## EXT2/EXT3/EXT4 Filesystem library for Golang
 
