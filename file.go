@@ -48,7 +48,7 @@ func (f *File) Read(p []byte) (n int, err error) {
 		}
 		offset += int64(n)
 		blockPos = 0
-		blockNum++
+		blockNum += contiguousBlocks
 		len -= int64(n)
 	}
 	f.pos += offset
