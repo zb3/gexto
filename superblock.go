@@ -152,6 +152,14 @@ func (sb *Superblock) GetBlockCount() int64 {
 	}
 }
 
+func (sb *Superblock) GetFreeBlockCount() int64 {
+	if sb.FeatureIncompat64bit() {
+		return (int64(sb.Free_blockCount_hi) << 32) | int64(sb.Free_blockCount_lo)
+	} else {
+		return int64(sb.Free_blockCount_lo)
+	}
+}
+
 func (sb *Superblock) GetBlockSize() int64 {
 	return int64(1024 << uint(sb.Log_block_size))
 }
